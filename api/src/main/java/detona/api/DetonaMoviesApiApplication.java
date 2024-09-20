@@ -1,15 +1,11 @@
 package detona.api;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import detona.api.data.Categoria;
+import io.swagger.v3.oas.annotations.OpenAPIDefinition;
+import io.swagger.v3.oas.annotations.info.Info;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
-
+@OpenAPIDefinition(info = @Info(title = "Detona Movies Api", version = "1", description = "API de listagem de filmes desenvolvida para você usar em seu projeto gratuitamente."))
 @SpringBootApplication
 public class DetonaMoviesApiApplication {
 

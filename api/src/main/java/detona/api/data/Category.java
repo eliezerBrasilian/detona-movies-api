@@ -1,6 +1,6 @@
 package detona.api.data;
 
-public enum Categoria{
+public enum Category {
     SUSPENSE,
     DRAMA,
     DOCUMENTARIO,
