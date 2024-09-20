@@ -21,7 +21,6 @@ public class MovieController{
     @Autowired
     MovieService movieService;
 
-
     @Operation(summary = "Exibe uma lista de filmes.", method = "GET")
 
     @ApiResponses(value = {
