@@ -5,7 +5,8 @@ import io.swagger.v3.oas.annotations.info.Info;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@OpenAPIDefinition(info = @Info(title = "Detona Movies Api", version = "1", description = "API de listagem de filmes desenvolvida para você usar em seu projeto gratuitamente."))
+@OpenAPIDefinition(info = @Info(title = "Detona Movies Api", version = "1",
+		description = "API de listagem de filmes desenvolvida para você usar em seu projeto gratuitamente."))
 @SpringBootApplication
 public class DetonaMoviesApiApplication {
 

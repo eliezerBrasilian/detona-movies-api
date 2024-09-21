@@ -6,12 +6,14 @@ import detona.api.services.MovieService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Objects;
 
 @Service
 public class MovieServiceImpl implements MovieService {
-    @Override
-    public  List<Movie> getMovies(){
-        return List.of(
+    private List<Movie> movies;
+
+    MovieServiceImpl(){
+        movies = List.of(
                 new Movie("1",
                         "https://f001.backblazeb2.com/file/papocine/2017/03/20170420-corra-papo-de-cinema-cartaz.jpg",
                         "Corra!",
@@ -80,5 +82,19 @@ public class MovieServiceImpl implements MovieService {
                         Category.FICCAO_CIENTIFICA)
 
         );
+    }
+    @Override
+    public  List<Movie> getMovies(){
+        return movies;
+    }
+
+    @Override
+    public Movie getMovieById(String id) {
+       var optionalMovie =  movies.stream().filter(movie -> Objects.equals(movie.id(), id)).findFirst();
+
+       if(optionalMovie.isEmpty()){
+           throw new RuntimeException("movie not found");
+       }
+       return optionalMovie.get();
     }
 }
