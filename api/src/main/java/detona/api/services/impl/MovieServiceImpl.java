@@ -2,6 +2,7 @@ package detona.api.services.impl;
 
 import detona.api.data.Category;
 import detona.api.data.Movie;
+import detona.api.exceptions.MovieNotFoundException;
 import detona.api.services.MovieService;
 import org.springframework.stereotype.Service;
 
@@ -89,11 +90,11 @@ public class MovieServiceImpl implements MovieService {
     }
 
     @Override
-    public Movie getMovieById(String id) {
+    public Movie getMovieById(String id) throws MovieNotFoundException {
        var optionalMovie =  movies.stream().filter(movie -> Objects.equals(movie.id(), id)).findFirst();
 
        if(optionalMovie.isEmpty()){
-           throw new RuntimeException("movie not found");
+           throw new MovieNotFoundException();
        }
        return optionalMovie.get();
     }
