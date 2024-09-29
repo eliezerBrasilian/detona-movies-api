@@ -79,6 +79,11 @@ curl -X GET "http://191.252.92.39:8080/detona-movies-api/" -H "accept: applicati
 - **TERROR**
 - **FICCAO_CIENTIFICA**
 
+### Tecnologias utilizadas
+- Spring Boot
+- Java
+- Swagger Open API
+
 ## Instalação e Execução
 
 Para rodar esta aplicação localmente:
